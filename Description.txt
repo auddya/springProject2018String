@@ -1,0 +1,11 @@
+Simulation of a Vibrating String:
+
+This project is aimed at solving a simple one dimensionsal wave equation, which we are specifying here as a 
+vibrating string fixed at both ends. We intend to simulate this system varying certain key parametrs which 
+influence oscillations.
+
+One of the most simple techniques to visualise a simulation which involves solving a PDE with certain
+boundary conditions is to save a string profile for certain time intervals and plot them agaisnt appropiate axes.
+One of the most fundamental conditions required to initialise a vibration is to pluck it at some point which
+generates the wave. After this at every time interval the old and new profiles of the string is updated through
+an iteration. The output we intend to achieve is to visualise the wave pattern with varying frequencies and modes.

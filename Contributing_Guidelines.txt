@@ -1,0 +1,9 @@
+The guidelines for contributing to the String Vibration Group are as follows:
+
+- All Python code will follow the PEP8 style guidelines: https://www.python.org/dev/peps/pep-0008/
+
+- All potential edits to the code will go through the following process:
+  -Make an edit in a personal branch from the cloned respository
+  -Push the personal branch to the main repository
+  -Create a pull required from the personal repository to be merged into the master branch
+  -Request a review from other group members before merging 

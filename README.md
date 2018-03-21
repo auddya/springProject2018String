@@ -53,8 +53,8 @@ transform from a non periodic wave profile to a periodic one.
       
 - #### Build Matrix
   
-  ##### Loop over First time step
-
+  ##### Loop over First time step [#7](https://github.com/auddya/springProject2018String/issues/7)
+         
   ###### Working algorithm:
   
   - Initially we load our initial condition into u_1 (Solution array at one time level back)
@@ -81,9 +81,9 @@ def special_function_for_first_time_step(solution arrays, initial condition, oth
 
 - #### Solve Matrix and Update Time step
 
-  ##### Loop over all time steps,solve the problem and update time step
-        
-	###### Working algorithm
+  ##### Loop over all time steps,solve the problem and update time step [#8](https://github.com/auddya/springProject2018String/issues/8)
+	
+  ###### Working algorithm
   
   - Loop over temporal intervals
   - Loop over spatial intervals

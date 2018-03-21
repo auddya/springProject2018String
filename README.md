@@ -57,15 +57,16 @@ transform from a non periodic wave profile to a periodic one.
          
   ###### Working algorithm:
   
-  - Initially we load our initial condition into u_1 (Solution array at one time level back)
-  - Update u with special function that utilised u_1.
-  - Switch variables before next step
-```
-def special_function_for_first_time_step(solution arrays, initial condition, other parameters):
+ - Initially we load our initial condition into u_1 (Solution array at one time level back)
+ - Update u with special function that utilised u_1.
+ - Switch variables before next step
 
-	This function lets us initialise the solution array and solve the equation for the first time step
-	We need this step as according to our FD equation, when n = 0, one of the indices have a -1 term in 
-	its index which requires some algebraic manipulation to build a new equation only for the first time step
+```
+ def special_function_for_first_time_step(solution arrays, initial condition, other parameters):
+
+ This function lets us initialise the solution array and solve the equation for the first time step
+ We need this step as according to our FD equation, when n = 0, one of the indices have a -1 term in 
+ its index which requires some algebraic manipulation to build a new equation only for the first time step
 
 	Input
 	------ 
@@ -78,7 +79,6 @@ def special_function_for_first_time_step(solution arrays, initial condition, oth
 	- Updated u and switched variables as an input for the next function
 
 ```
-
 - #### Solve Matrix and Update Time step
 
   ##### Loop over all time steps,solve the problem and update time step [#8](https://github.com/auddya/springProject2018String/issues/8)
@@ -92,26 +92,19 @@ def special_function_for_first_time_step(solution arrays, initial condition, oth
   - Switch variables before next time step
 
 ```
-def main_function_simulation(arrays, other parameters):
+ def main_function_simulation(arrays, other parameters):
 	
-	This functions fills up the solution arrays using loops and FD equations
+ This functions fills up the solution arrays using loops and FD equations
 
 	Input
 	------
 	- arrays: Arrays from the previous function which will be used in the algorithm
 	- other parameters: Needed for the FD equation
 	
-	Working algorithm:
-	------
-	- Loop over temporal intervals
-	- Loop over spatial intervals
-	- Apply finite difference formula 
-	- Insert boundary conditions after each time step
-	- Switch variables before next time step
-
 	Output
 	------
 	- Array containing the solution of our problem for a given PDE, IC and BC
+
 ```
 
 - ## Write/View Output

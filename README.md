@@ -50,8 +50,34 @@ transform from a non periodic wave profile to a periodic one.
 - ### Setup Problem
 
 - ### Loop Over Time Steps 
+
+- #### Initialize Matrix
+
+  ##### Create Matrix [#9](https://github.com/auddya/springProject2018String/issues/9)
+
+  ###### Working algorithm:
+  
+  - Given input data, (number of time steps and number of spatial nodes), generates empty 2D Matrix
+  - Numerically caluclated values are assigned to this matrix and plotter later
+```
+def build_matrix(x_nodes, t_nodes)
+	
+	This function will initialize a two dimensional matrix, where each row is an individual time step and each
+	column is a point in space, distributed uniformly along the length of the string. This matrix will be setup 
+	to initially be empty (all zeros). The initial time step array will later be assigned to the first row.
+
+	Input
+	------
+	- x_nodes: Number of spatial nodes along the string
+	- t_nodes: Numer of time steps
+
+	Output
+	------
+	2D array of space (x) and time (t)
+
+```
       
-- #### Build Matrix
+- #### Build First Time Step of Matrix
   
   ##### Loop over First time step [#7](https://github.com/auddya/springProject2018String/issues/7)
          

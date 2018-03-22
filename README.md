@@ -115,7 +115,70 @@ def main_function_simulation(arrays, other parameters):
 ```
 
 - ## Write/View Output
+- #### Output file of results at all spatial and temporal points
+    
+    #####Working Algorithm
 
+    - Receive array from 'main_function_simulation'
+    - Create a three rows of a table (dictionary?) that contains the information of node number, displacement, and time step
+    - Input array data into the created table
+    - Output table in text file
+
+
+'''
+def output_results_file(array):
+
+       This function outputs a file containing the results at every spatial and temporal step.
+
+       Input
+       ------
+       - Array: Received from def main_function_simulation
+
+       Working algorithm:
+       ------
+       - Receive array from 'main_function_simulation'
+       - Create a three rows of a table (dictionary?) that contains the information of node number, 
+       displacement, and time step
+       - Input array data into the created table
+       - Output table in text file
+
+       Output
+       ------
+       - File contained table with node number, displacement at that node, and time step
+'''
+
+- #### Output file of plots at desired timesteps
+
+
+    #####Working Algorithm
+
+    - Receive table(dictionary?) from 'output_results_file'
+    - Ask for at what timesteps the user requests a plot of results
+    - Create plot at desired timesteps
+    - Output plots
+
+
+'''
+def output_results_plot(dictionary,timesteps):
+
+        This function outputs a plot at every timestep inputted by the user.
+
+        Input
+        ------
+        - Dictionary: Received from def output_results_file
+        - Timesteps: Entered via command line
+
+        Working algorithm:
+        ------
+        - Receive table(dictionary?) from 'output_results_file'
+        - Ask for at what timesteps the user requests a plot of results
+        - Create plot at desired timesteps
+        - Output plots
+
+        Output
+        ------
+        - File containing plot at every desired timestep
+'''
 
 
 

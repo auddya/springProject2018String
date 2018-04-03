@@ -43,6 +43,7 @@ transform from a non periodic wave profile to a periodic one.
 ------
 # Project Outline 
 
+<<<<<<< HEAD
 ## Read Input
 
 ## Solve Physics 
@@ -193,6 +194,30 @@ def output_results_plot(dictionary,timesteps):
         - Ask for at what timesteps the user requests a plot of results
         - Create plot at desired timesteps
         - Output plots
+=======
+- (#6) Intialize input from user with function 'get_user_input()'
+    - Receive user input from the command line, (or a text file), by prompting the user with questions about the geometry of the problem and initial conditions.
+    - Output a dictionary called inputs that contains the string length, pluck position, pluck displacement, yield strength, and time scale.
+- Solve Physics
+    - Setup Finite Difference function
+        - Given user input, sets up solution matrix
+    - (#7) Build first time step of matrix
+        - Initially we load the initial condition into u_1 (solution array at one time level back)
+        - Update u with special function that utilised u_1.
+    - (#8) Solve matrix and update time step
+        - Loop over temporal intervals
+        - Loop over spatial intervals
+        - Apply finite difference formula
+        - Insert boundary conditions after each time step
+        - Switch variables before next time step
+- Write and View Output
+    - (#12) Output file of results at all spatial and temporal points
+        - Create a dictionary that contains the node number, displacement, and time step
+        - Output table in text file with function 'output_results_file'.
+    - (#13) Output file of plots at desired timesteps
+        - Ask for what timesteps the user requests a plot of the results by prompting the user with questions in the command line.
+        - Create and output plots
+>>>>>>> e4a0b0bb570731002b294f91f9cf5919cd108318
 
         Output
         ------

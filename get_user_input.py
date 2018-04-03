@@ -77,6 +77,9 @@ def main():
    time = get_time()
    yield_strength = get_yield_strength()
 
-   output = (string_length, pluck_position, pluck_displacement,
-             time, yield_strength)
+   output = ('String Length' : string_length, 
+             'Pluck Position' : pluck_position,
+             'Pluck Displacement' ; pluck_displacement,
+             'Time' :  time, 
+             'Yield Strength' : yield_strength)
    return output

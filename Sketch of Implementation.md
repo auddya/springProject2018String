@@ -21,14 +21,14 @@
 
 * Uniform mesh with constant mesh spacings ?t and ?x:
   
-  x_i=i*?x, i=0, … ,N_x, t_i = n*?t , n=0, … ,Nt
+  x_i=i*?x, i=0, â€¦ ,N_x, t_i = n*?t , n=0, â€¦ ,Nt
 
 
 **Step 2: Fulfilling the equation at the mesh points**
 
   Let the PDE be satisfied at all interior mesh points
 
-  for i = 1, … ,N_x - 1 and n = 1 , … , N_t-1.
+  for i = 1, â€¦ ,N_x - 1 and n = 1 , â€¦ , N_t-1.
 
   For n = 0 we have the initial conditions u = I(x) and u_t = 0, and at the          boundaries i = 0,Nx we have the boundary condition u = 0
 
@@ -42,7 +42,7 @@
 
   * Use a centered difference for u_t( x , 0 )
 
-    [D_2t(u)](n,i) = 0, n = 0  ?  u(n-1,i) = u(n+1,i) , i = 0 , … , Nx
+    [D_2t(u)](n,i) = 0, n = 0  ?  u(n-1,i) = u(n+1,i) , i = 0 , â€¦ , Nx
   
 
 **Step 4: Formulating a recursive algorithm**
@@ -65,7 +65,7 @@
 
   * Remedy: use the initial condition u_t = 0 together with the stencil to     eliminate  u( -1 , i )
 
-**Step 7: The working algorithm
+**Step 7: The working algorithm**
 
  If u(n,i) be a general solution of any point within the domain (0,T]x (0,L)  
 

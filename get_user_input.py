@@ -1,85 +1,49 @@
 #! /usr/bin/python
+import argparse
 
-def get_length(): 
+def check_pluck_position(string_length, pluck_position):
 
-   print('\nLength of string:')
-   string_length = raw_input('> ')
+    if string_length <= pluck_position:
+        print("The position of the pluck is greater than the string length.\nProgram ended.")
+    elif  pluck_position <= 0:
+        print("The position of the pluck is less than zero.\nProgram terminated.")
+        exit()
+    pass
 
-   try: 
-      string_length = float(string_length)
-   except ValueError:
-      print('Please enter a number...')
-      string_length = get_length()
-   
-   return string_length
+def check_string_length(string_length, pluck_position, pluck_displacement, yield_strength): 
 
-def get_pluck_position(string_length):
-
-   print('\nPosition of pluck:')
-   pluck_position = raw_input('> ')
-
-   try:
-      pluck_position = float(pluck_position)
-   except ValueError:
-      print('Please enter a number...')
-      pluck_position = get_pluck_position(string_length)
-
-   if (pluck_position <= 0) or (pluck_position >= string_length):
-      print('Choose a position between 0 and '+str(string_length))
-      pluck_position = get_pluck_position(string_length)
-   
-   return pluck_position
-
-def get_pluck_displacement():
-
-   print('\nDisplacement of pluck')
-   pluck_displacement = raw_input('> ')
-
-   try:
-      pluck_displacement = float(pluck_displacement)
-   except ValueError:
-      print('Please enter a number...')
-      pluck_displacement = get_pluck_displacement()
-
-   return pluck_displacement
-
-def get_time():
-
-   print('\nTime elapsed during calculation:')
-   time = raw_input('> ')
-
-   try:
-      time = float(time)
-   except ValueError:
-      print('Please enter a number...')
-      time = get_time()
-
-   return time
-
-def get_yield_strength():
-
-   print('\nYield strength of string:')
-   yield_strength = raw_input('> ')
-
-   try:
-      yield_strength = float(yield_strength)
-   except ValueError:
-      print('Please enter a number...')
-      yield_strength = get_yield_strength()
-
-   return yield_strength
-
+    pass
 
 def main():
-   string_length = get_length()
-   pluck_position = get_pluck_position(string_length)
-   pluck_displacement = get_pluck_displacement()
-   time = get_time()
-   yield_strength = get_yield_strength()
 
-   output = ('String Length' : string_length, 
-             'Pluck Position' : pluck_position,
-             'Pluck Displacement' ; pluck_displacement,
-             'Time' :  time, 
-             'Yield Strength' : yield_strength)
-   return output
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-l", "--string_length", type=float, default=20, required=False,
+                        help="Length of the guitar string.")
+
+    parser.add_argument("-pp", "--pluck_position", type=float, default=10, required=False,
+                        help="Position of the pluck.")
+
+    parser.add_argument("-pd", "--pluck_displacement", type=float, default=10, required=False,
+                        help="Displacement of the pluck.")
+
+    parser.add_argument("-t", "--time", type=float, default=50, required=False,
+                        help="Time of solution.")
+
+    parser.add_argument("-y", "--yield_strength", type=float, default=250, required=False,
+                        help="Yield strength of string.")
+
+    args = parser.parse_args()
+
+    check_pluck_position(args.string_length, args.pluck_position)
+    check_string_length(args.string_length, args.pluck_position, args.pluck_displacement, args.yield_strength)
+
+    user_input = {'String Length' : args.string_length, 'Pluck Position' : args.pluck_position,
+              'Pluck Displacement' : args.pluck_displacement, 'Time' : args.time, 
+              'Yield Strength' : args.yield_strength}
+
+    return user_input 
+
+if __name__ == "__main__":
+   
+    main()

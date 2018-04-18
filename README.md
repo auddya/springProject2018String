@@ -44,26 +44,26 @@ transform from a non periodic wave profile to a periodic one.
 
 * Project Workflow *
 
-- [Intialize input from user with function 'get_user_input()'][#6]
+- [Intialize input from user with function 'get_user_input()'](https://github.com/auddya/springProject2018String/issues/6)
     - Receive user input from the command line, (or a text file), by prompting the user with questions about the geometry of the problem and initial conditions.
     - Output a dictionary called inputs that contains the string length, pluck position, pluck displacement, yield strength, and time scale.
 - Solve Physics
     - Setup Finite Difference function
         - Given user input, sets up solution matrix
-    - [Build first time step of matrix][#7]
+    - [Build first time step of matrix](https://github.com/auddya/springProject2018String/issues/7)
         - Initially we load the initial condition into u_1 (solution array at one time level back)
         - Update u with special function that utilised u_1.
-    - [Solve matrix and update time step][#8]
+    - [Solve matrix and update time step](https://github.com/auddya/springProject2018String/issues/8)
         - Loop over temporal intervals
         - Loop over spatial intervals
         - Apply finite difference formula
         - Insert boundary conditions after each time step
         - Switch variables before next time step
 - Write and View Output
-    - [Output file of results at all spatial and temporal points][#12]
+    - [Output file of results at all spatial and temporal points](https://github.com/auddya/springProject2018String/issues/12)
         - Create a dictionary that contains the node number, displacement, and time step
         - Output table in text file with function 'output_results_file'.
-    - [Output file of plots at desired timesteps][#13]
+    - [Output file of plots at desired timesteps](https://github.com/auddya/springProject2018String/issues/13)
         - Ask for what timesteps the user requests a plot of the results by prompting the user with questions in the command line.
         - Create and output plots
 

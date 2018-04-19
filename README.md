@@ -42,7 +42,7 @@ transform from a non periodic wave profile to a periodic one.
 
 -----
 
-* Project Workflow *
+# Project Workflow 
 
 - [Intialize input from user with function 'get_user_input()'](https://github.com/auddya/springProject2018String/issues/6)
     - Receive user input from the command line, (or a text file), by prompting the user with questions about the geometry of the problem and initial conditions.

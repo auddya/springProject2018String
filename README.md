@@ -47,7 +47,7 @@ transform from a non periodic wave profile to a periodic one.
 - [Intialize input from user with function 'get_user_input()'](https://github.com/auddya/springProject2018String/issues/6)
     - Receive user input from the command line, (or a text file), by prompting the user with questions about the geometry of the problem and initial conditions.
     - Output a dictionary called inputs that contains the string length, pluck position, pluck displacement, yield strength, and time scale.
-- Solve Physics
+- [Solve Physics](https://github.com/auddya/springProject2018String/blob/master/solver.py)
     - Setup Finite Difference function
         - Given user input, sets up solution matrix
     - [Build first time step of matrix](https://github.com/auddya/springProject2018String/issues/7)

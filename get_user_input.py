@@ -1,6 +1,6 @@
 #! /usr/bin/python
 import argparse
-
+ 
 def check_pluck_position(string_length, pluck_position):
 
     if string_length <= pluck_position:

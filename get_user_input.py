@@ -37,7 +37,7 @@ def main():
                         help="Time of solution.")
 
     parser.add_argument("-dt", "--time_steps", type=float, default=100, required=False,
-                        help="The number of time nodes in the solution."
+                        help="The number of time nodes in the solution.")
 
     parser.add_argument("-y", "--yield_strength", type=float, default=250, required=False,
                         help="Yield strength of string.")

@@ -14,7 +14,7 @@ def check_string_length(string_length, pluck_position, pluck_displacement, yield
 
     pass
 
-def check_courant_number(courant_number)
+def check_courant_number(courant_number):
 
     if courant_number >= 1 or courrant_number <= 0:
         print("The courant number entered is not valid.\nProgram ended.")

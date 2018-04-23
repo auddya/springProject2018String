@@ -16,7 +16,7 @@ def check_string_length(string_length, pluck_position, pluck_displacement, yield
 
 def check_courant_number(courant_number):
 
-    if courant_number >= 1 or courrant_number <= 0:
+    if courant_number >= 1 or courant_number <= 0:
         print("The courant number entered is not valid.\nProgram ended.")
         exit()
 
@@ -48,7 +48,7 @@ def main():
     parser.add_argument("-v0", "--initial_velocity", type=float, default=0, required=False,
                         help="Initial velocity of the string at the pluck position") 
 
-    parser.add-argument("-c", "--wave_speed", type=float, default=330, required=False,
+    parser.add_argument("-c", "--wave_speed", type=float, default=330, required=False,
                         help="Speed of the wave in meters per second.")
 
     args = parser.parse_args()

@@ -2,7 +2,11 @@
 
 import get_user_input 
 
-inputs = get_user_input.main()
-print(inputs)
+def main():
+ 
+    inputs = get_user_input.main()
 
+if __name__ == "__main__":
+    
+    main()
 

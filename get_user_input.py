@@ -14,6 +14,10 @@ def check_string_length(string_length, pluck_position, pluck_displacement, yield
 
     pass
 
+def check_plotting_times(time, plot_times):
+
+    pass
+
 def check_courant_number(courant_number):
 
     if courant_number >= 1 or courant_number <= 0:
@@ -35,6 +39,9 @@ def main():
 
     parser.add_argument("-t", "--time", type=float, default=50, required=False,
                         help="Time of solution.")
+
+    parser.add_argument("-pt", "--plot_times", type=float, required=False,
+                        help="Times at which to plot the solution.")
 
     parser.add_argument("-dt", "--time_steps", type=float, default=100, required=False,
                         help="The number of time nodes in the solution.")
@@ -62,6 +69,7 @@ def main():
                   'Pluck Displacement' : args.pluck_displacement,
                   'Time' : args.time, 
                   'Time Steps' : args.time_steps,
+                  'Plotting Times' : args.plot_times,
                   'Yield Strength' : args.yield_strength,
                   'Courant Number' : args.courant_number,
                   'Initial Velocity' : args.initial_velocity,

@@ -28,7 +28,7 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-{DCB.    parser.add_argument("-l", "--string_length", type=float, default=20, required=False,
+    parser.add_argument("-l", "--string_length", type=float, default=20, required=False,
                         help="Length of the guitar string.")
 
     parser.add_argument("-pp", "--pluck_position", type=float, default=10, required=False,
@@ -69,7 +69,7 @@ def main():
                   'Pluck Displacement' : args.pluck_displacement,
                   'Time' : args.time, 
                   'Time Steps' : args.time_steps,
-                  'Plotting Times' : args.plot_times',
+                  'Plotting Times' : args.plot_times,
                   'Yield Strength' : args.yield_strength,
                   'Courant Number' : args.courant_number,
                   'Initial Velocity' : args.initial_velocity,

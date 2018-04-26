@@ -10,13 +10,19 @@ def check_pluck_position(string_length, pluck_position):
         print("The position of the pluck is less than zero.\nProgram terminated.")
         exit()
 
-def check_string_length(string_length, pluck_position, pluck_displacement, yield_strength): 
+def check_pluck_displacement(string_length, pluck_position, pluck_displacement, yield_strength): 
 
     pass
 
-def check_plotting_times(time, plot_times):
+def check_plotting_times(sim_time, plot_times):
 
-    pass
+    for time in plot_times:
+        if time > sim_time:
+            print("At least one plotting time was greater than the simulation time.\nProgram ended.")
+            exit()
+        elif time < 0:
+            print("At least one plotting time was less than t=0.\nProgram ended.")
+            exit()
 
 def check_courant_number(courant_number):
 
@@ -40,7 +46,7 @@ def main():
     parser.add_argument("-t", "--time", type=float, default=50, required=False,
                         help="Time of solution.")
 
-    parser.add_argument("-pt", "--plot_times", type=float, required=False,
+    parser.add_argument("-pt", "--plot_times", nargs='+', type=float, required=False,
                         help="Times at which to plot the solution.")
 
     parser.add_argument("-dt", "--time_steps", type=float, default=100, required=False,
@@ -61,8 +67,10 @@ def main():
     args = parser.parse_args()
 
     check_pluck_position(args.string_length, args.pluck_position)
-    check_string_length(args.string_length, args.pluck_position, args.pluck_displacement, args.yield_strength)
+    check_pluck_displacement(args.string_length, args.pluck_position, args.pluck_displacement, args.yield_strength)
     check_courant_number(args.courant_number)
+    check_plotting_times(args.time, args.plot_times)
+
 
     user_input = {'String Length' : args.string_length, 
                   'Pluck Position' : args.pluck_position,

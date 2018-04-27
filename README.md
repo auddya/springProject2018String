@@ -7,10 +7,12 @@ This project is aimed at solving a simple one dimensional wave equation, which w
 **Description**
 
 One of the most simple techniques to visualise a simulation which involves solving a PDE  with certain boundary conditions is
-to save the string profile for certain time intervals and plot them against appropriate axes.One of the most fundamental 
-conditions required to *initialise* a vibration, is to pluck it at some point which generates the wave. After this at every
+to save the string profile for certain time intervals and plot them against appropriate axes. A fundamental 
+conditions required to *initialise* a vibration, is to have a source function at one end which generates the wave. After this at every
 time interval the old and new profiles of the string is updated through an iteration. The output we intend to achieve is to
-visualise the wave pattern with varying frequencies and modes. 
+visualise the wave pattern with varying frequencies and modes.
+
+One primary objective is to visualise standing waves. 
 
 **Requirements**
 
@@ -66,6 +68,7 @@ transform from a non periodic wave profile to a periodic one.
     - [Output file of plots at desired timesteps](https://github.com/auddya/springProject2018String/issues/13)
         - Ask for what timesteps the user requests a plot of the results by prompting the user with questions in the command line.
         - Create and output plots
+
 
 
 

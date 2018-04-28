@@ -24,20 +24,22 @@ def check_pluck_displacement(string_length, pluck_position, pluck_displacement,
     if stress > yield_stress:
         print("The pluck displacement for this material is too large." +
               "\nProgram ended.")
+        print(stress)
         exit()
 
 
 def check_plotting_times(sim_time, plot_times):
 
-    for time in plot_times:
-        if time > sim_time:
-            print("At least one plotting time was greater than the "
-                  "simulation time.\nProgram ended.")
-            exit()
-        elif time < 0:
-            print("At least one plotting time was less than t=0." +
-                  "\nProgram ended.")
-            exit()
+    if isinstance(plot_times,list):
+        for time in plot_times:
+            if time > sim_time:
+                print("At least one plotting time was greater than the "
+                      "simulation time.\nProgram ended.")
+                exit()
+            elif time < 0:
+                print("At least one plotting time was less than t=0." +
+                      "\nProgram ended.")
+                exit()
 
 
 def check_courant_number(courant_number):
@@ -57,7 +59,7 @@ def main():
     parser.add_argument("-pp", "--pluck_position", type=float, default=50,
                         required=False, help="Position of the pluck.")
 
-    parser.add_argument("-pd", "--pluck_displacement", type=float, default=5,
+    parser.add_argument("-pd", "--pluck_displacement", type=float, default=1,
                         required=False, help="Displacement of the pluck.")
 
     parser.add_argument("-t", "--time", type=float, default=50, required=False,

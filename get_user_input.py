@@ -1,7 +1,6 @@
 #! /usr/bin/python
 import argparse
 
-
 def check_pluck_position(string_length, pluck_position):
 
     if string_length <= pluck_position:
@@ -15,9 +14,17 @@ def check_pluck_position(string_length, pluck_position):
 
 
 def check_pluck_displacement(string_length, pluck_position, pluck_displacement,
-                             yield_strength):
+                             yield_stress, youngs_modulus):
 
-    pass
+    length_1 = (pluck_position**2 + pluck_displacement**2)**0.5
+    length_2 = ((string_length - pluck_position)**2 + pluck_displacement**2)**0.5
+    strain = (length_1 + length_2 - string_length) / string_length
+    stress = youngs_modulus * strain
+
+    if stress > yield_stress:
+        print("The pluck displacement for this material is too large." +
+              "\nProgram ended.")
+        exit()
 
 
 def check_plotting_times(sim_time, plot_times):
@@ -44,13 +51,13 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-l", "--string_length", type=float, default=20,
+    parser.add_argument("-l", "--string_length", type=float, default=100,
                         required=False, help="Length of the guitar string.")
 
-    parser.add_argument("-pp", "--pluck_position", type=float, default=10,
+    parser.add_argument("-pp", "--pluck_position", type=float, default=50,
                         required=False, help="Position of the pluck.")
 
-    parser.add_argument("-pd", "--pluck_displacement", type=float, default=10,
+    parser.add_argument("-pd", "--pluck_displacement", type=float, default=5,
                         required=False, help="Displacement of the pluck.")
 
     parser.add_argument("-t", "--time", type=float, default=50, required=False,
@@ -64,9 +71,9 @@ def main():
                         required=False,
                         help="The number of time nodes in the solution.")
 
-    parser.add_argument("-y", "--yield_strength", type=float, default=250,
+    parser.add_argument("-y", "--yield_stress", type=float, default=215,
                         required=False,
-                        help="Yield strength of string.")
+                        help="Yield strength of string material.")
 
     parser.add_argument("-cn", "--courant_number", type=float, default=0.75,
                         required=False, help="The Courant Number is " +
@@ -80,11 +87,15 @@ def main():
                         required=False, help="Speed of the wave in meters" +
                         " per second.")
 
+    parser.add_argument("-E", "--youngs_modulus", type=float, default=190000,
+                        required=False, help="Young's modulus of material.")
+
     args = parser.parse_args()
 
     check_pluck_position(args.string_length, args.pluck_position)
     check_pluck_displacement(args.string_length, args.pluck_position,
-                             args.pluck_displacement, args.yield_strength)
+                             args.pluck_displacement, args.yield_stress,
+                             args.youngs_modulus)
     check_courant_number(args.courant_number)
     check_plotting_times(args.time, args.plot_times)
 
@@ -94,7 +105,6 @@ def main():
                   'Time': args.time,
                   'Time Steps': args.time_steps,
                   'Plotting Times': args.plot_times,
-                  'Yield Strength': args.yield_strength,
                   'Courant Number': args.courant_number,
                   'Initial Velocity': args.initial_velocity,
                   'Wave Speed': args.wave_speed}

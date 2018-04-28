@@ -11,7 +11,7 @@ def plot_string(displ_time_position, user_data ):
     - displ_times_position: (np.array) A matrix with the displacement at specific times 
                            and position.
     - user_data: Dictionary with the user inserted information.
-    - our_times: list[int] A list of the times that are actually plotted.
+    
 
     
     """

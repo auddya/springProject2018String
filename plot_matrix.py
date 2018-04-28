@@ -18,7 +18,8 @@ def plot_string(displ_time_position, user_data ):
     time_nodes = []
     simul_time = user_data["Time"]
     user_times = user_data["Plotting Times"]
-    number_of_nodes = 1 #this is pyhthonized: 1 means nodes 0 and 1 then 2 nodes
+    rows, columns = np.shape(displ_times_position)
+    number_of_nodes = rows - 1 #this is pyhthonized: 1 means nodes 0 and 1 then 2 nodes
     
     #pdb.set_trace()   
     for time in user_times: 
@@ -32,5 +33,5 @@ def plot_string(displ_time_position, user_data ):
         i+=1
     plt.show()  
 
- 
+
 

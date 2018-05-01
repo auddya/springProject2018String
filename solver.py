@@ -4,7 +4,7 @@ def solver(user_input):
 
     x = np.zeros(user_input['Spatial Nodes'])
     t = np.zeros(user_input['Temporal Nodes'])
-    u = np.zeros((np.size(t),npsize(x)))
+    u = np.zeros((np.size(t),np.size(x)))
 
     return u, x, t   
 	

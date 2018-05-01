@@ -105,7 +105,8 @@ def main():
                   'Temporal Nodes': temporal_nodes,
                   'Plotting Times': args.plot_times,
                   'Wave Speed': args.wave_speed,
-                  'Frequency': args.frequency}
+                  'Frequency': args.frequency,
+                  'Space Step': args.space_step}
 
     return user_input
 

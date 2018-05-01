@@ -18,7 +18,7 @@ def plot_string(displ_time_position, user_data ):
     time_nodes = []
     simul_time = user_data["Time"]
     user_times = user_data["Plotting Times"]
-    rows, columns = np.shape(displ_times_position)
+    rows, columns = np.shape(displ_time_position)
     number_of_nodes = rows - 1 #this is pyhthonized: 1 means nodes 0 and 1 then 2 nodes
     
     #pdb.set_trace()   
@@ -29,6 +29,8 @@ def plot_string(displ_time_position, user_data ):
         plt.figure(i)
         plt.title('Time: ' + str(user_times[i-1]) + ' seconds' )
         #pdb.set_trace()
+        plt.xlabel('Position')
+        plt.ylabel('Displacement')
         plt.plot(displ_time_position[node][:])
         i+=1
     plt.show()  

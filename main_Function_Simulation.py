@@ -1,6 +1,6 @@
 def main_Function_Simulation(user_input, u):
 
-    c = def_Courant_Number(user_input['Time Steps'],user_input['Space Steps'],user_input['Wave Speed'])
+    c = def_Courant_Number(user_input['Time Step'],user_input['Space Step'],user_input['Wave Speed'])
     
     for j in range(2,user_input['Temporal Nodes']):
         for i in range(1,user_input['Spatial Nodes']):

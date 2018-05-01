@@ -1,3 +1,5 @@
+from def_Courant_Number import def_Courant_Number
+
 def main_Function_Simulation(user_input, u):
 
     c = def_Courant_Number(user_input['Time Step'],user_input['Space Step'],user_input['Wave Speed'])

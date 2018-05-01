@@ -26,6 +26,10 @@ def check_pluck_displacement(string_length, pluck_position, pluck_displacement,
               "\nProgram ended.")
         print(stress)
         exit()
+    elif pluck_position <= 0:
+        print("The position of the pluck is less than zero." +
+              "\nProgram terminated.")
+        exit()
 
 
 def check_plotting_times(sim_time, plot_times):

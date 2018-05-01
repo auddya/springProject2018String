@@ -51,7 +51,7 @@ def main():
     spatial_nodes = args.string_length / args.space_step
 
     user_input = {'String Length': args.string_length,
-                  'Spatial Nodes': spatial_nodes
+                  'Spatial Nodes': spatial_nodes,
                   'Time': args.time,
                   'Time Step': args.time_step,
                   'Temporal Nodes': temporal_nodes,

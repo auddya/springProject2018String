@@ -19,13 +19,13 @@ def main():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-l", "--string_length", type=float, default=100,
+    parser.add_argument("-l", "--string_length", type=float, default=50,
                         required=False, help="Length of the guitar string.")
 
     parser.add_argument("-t", "--time", type=float, default=10, required=False,
                         help="Time of solution.")
 
-    parser.add_argument("-pt", "--plot_times", default = [0, 2, 5, 8, 10], nargs='+', type=float,
+    parser.add_argument("-pt", "--plot_times", default = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5], nargs='+', type=float,
                         required=False,
                         help="Times at which to plot the solution.")
 
@@ -33,7 +33,7 @@ def main():
                         required=False,
                         help="The time step of the solution.")
 
-    parser.add_argument("-c", "--wave_speed", type=float, default=330,
+    parser.add_argument("-c", "--wave_speed", type=float, default=10,
                         required=False, help="Speed of the wave in meters" +
                         " per second.")
 

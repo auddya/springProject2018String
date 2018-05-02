@@ -11,9 +11,11 @@ def main():
  
     inputs = get_input()
     u, x, t = solver(inputs)
-    u = first_step(u, t, inputs)
-    u = main_Function_Simulation(inputs, u)
+    u1 = first_step(u, t, inputs)
+    u = main_Function_Simulation(inputs, u1)
     plot_matrix.plot_string(u, inputs)
+    print(u)
+    print(u1)
     #solution_to_file(u, x, t)
 
 

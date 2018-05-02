@@ -25,7 +25,7 @@ def main():
     parser.add_argument("-t", "--time", type=float, default=10, required=False,
                         help="Time of solution.")
 
-    parser.add_argument("-pt", "--plot_times", nargs='+', type=float,
+    parser.add_argument("-pt", "--plot_times", default = [0, 2, 5, 8, 10], nargs='+', type=float,
                         required=False,
                         help="Times at which to plot the solution.")
 

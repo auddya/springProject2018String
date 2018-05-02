@@ -12,6 +12,7 @@ def main_Function_Simulation(user_input, u):
             u1[j,i] = 2 * u[j-1,i] - u[j-2,i]
             u2[j,i] = u[j-1,i-1] - 2*u[j-1,i] + u[j-1,i+1]
             u[j,i] = u1[j,i] + c*c*u2[j,i]
+
     return u
 
 

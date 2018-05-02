@@ -7,6 +7,7 @@ def special_function_for_first_time_step(u, t, user_input):
     
     for i in range(int(initial_source_time)):
         u[i,0] = math.sin(2*math.pi*user_input['Frequency']*t[i])
+        u[i,1] = math.sin(2*math.pi*user_input['Frequency']*t[i])
 
     return u
 

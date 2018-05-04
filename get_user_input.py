@@ -3,6 +3,21 @@ import argparse
 
 def check_plotting_times(sim_time, plot_times):
 
+    '''
+    This function checks that the times at which the user has chosen to plot
+    are within the bounds of the simulation time frame. If the plotting times
+    are outside of the interval [0,sim_time] the program is ended.
+
+    Inputs
+    --------
+    sim_time: <float> the total time of the simulation
+    plot_times: <list of floats> list of times the user has chosen to plot
+
+    Outputs
+    --------
+    None
+    '''
+
     if isinstance(plot_times,list):
         for time in plot_times:
             if time > sim_time:
@@ -17,6 +32,20 @@ def check_plotting_times(sim_time, plot_times):
 
 def main():
 
+    '''
+    The main function takes user input on the command line and runs tests
+    that check if the user input is valid.
+
+    Inputs
+    --------
+    Command line arguments from argparse (see below)
+
+    Outputs
+    --------
+    user_input: <dictionary> Includes all user input values from the command
+                line as well as default values for those inputs not specified
+    '''
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-l", "--string_length", type=float, default=50,
@@ -25,8 +54,8 @@ def main():
     parser.add_argument("-t", "--time", type=float, default=10, required=False,
                         help="Time of solution.")
 
-    parser.add_argument("-pt", "--plot_times", default = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5], nargs='+', type=float,
-                        required=False,
+    parser.add_argument("-pt", "--plot_times", nargs='+', type=float,
+                        required=False, default=[],
                         help="Times at which to plot the solution.")
 
     parser.add_argument("-dt", "--time_step", type=float, default=0.01,
@@ -64,5 +93,10 @@ def main():
 
 
 if __name__ == "__main__":
+
+    '''
+    This function runs the main if only the get_user_input file is run from
+    the command line. 
+    '''
 
     main()
